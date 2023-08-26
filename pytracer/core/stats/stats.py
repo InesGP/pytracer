@@ -115,7 +115,7 @@ def get_stats(values):
         append = _stats.append
         for ty, v in zip(types, zipv):
             if ty == TypeValue.OTHER:
-                append(get_stat(np.array(v, dtype=np.object)))
+                append(get_stat(np.array(v, dtype=object)))
             else:
                 append(StatisticNumpy(np.array(v)))
     elif _type == TypeValue.NUMPY:
@@ -128,7 +128,7 @@ def get_stats(values):
     elif _type == TypeValue.STRING:
         _stats = StatisticNumpy(values, empty=True, dtype=type(values[0]))
     else:
-        _stats = get_stat(np.array(values, dtype=np.object))
+        _stats = get_stat(np.array(values, dtype=object))
 
     return _stats
 

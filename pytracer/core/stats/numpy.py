@@ -2,7 +2,7 @@ import warnings
 
 import numpy as np
 import scipy.sparse as spr
-from significantdigits.sigdigits import significant_digits, Method
+from significantdigits import significant_digits, Method
 from pytracer.cache import module_args
 
 
@@ -38,7 +38,7 @@ class StatisticNumpy:
         np.dtype("complex64"): 24,
         np.dtype("complex128"): 53,
         np.dtype("complex256"): np.finfo(np.dtype('complex256')).nmant+124,
-        np.str: 16,
+        str: 16,
         np.dtype("object"): 53
     }
 
@@ -112,7 +112,7 @@ class StatisticNumpy:
         try:
             return self._data.dtype
         except Exception:
-            return np.object_
+            return object
 
     def ndim(self):
         return self._ndim
