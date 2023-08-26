@@ -71,7 +71,7 @@ class StatisticNumpy:
             self._shape = self._data.shape[1:]
             self._type = self._data.dtype
 
-        if np.issubdtype(self._type, np.str) or isinstance(self._type, str):
+        if np.issubdtype(self._type, str) or isinstance(self._type, str):
             self.cached_mean = np.nan
             self.cached_std = np.nan
             self.cached_sig = np.nan
